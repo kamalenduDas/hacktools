@@ -1,0 +1,7 @@
+cnt=$(echo `wc -l $1` | tr -dc '0-9')
+n=1
+while (( $n <= $cnt ));
+ do echo `cat $1 | cut -d: -f1-2 | head -$n | tail -1`:`cat $2 | cut -d: -f3-7 | head -$n | tail -1`
+    n=$(( n+1 ))
+done;
+fi
